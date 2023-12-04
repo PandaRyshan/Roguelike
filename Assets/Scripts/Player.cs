@@ -105,15 +105,13 @@ public class Player : MonoBehaviour
         curHp -= damageToTake;
         UI.instance.UpdateHealth(curHp);
 
-        if (curHp <= 0)
+        if (curHp > 0)
         {
-            Destroy(gameObject);
+            StartCoroutine("DamageFlash");
         }
-        StartCoroutine("DamageFlash");
-
-        if (curHp <= 0)
+        else
         {
-            SceneManager.LoadScene(0);
+            GameManager.instance.Restart();
         }
     }
 

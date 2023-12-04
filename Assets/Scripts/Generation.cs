@@ -184,18 +184,4 @@ public class Generation : MonoBehaviour
                                       Mathf.RoundToInt(playerPos.y / 12));
         UI.instance.map.texture = MapTextureGenerator.Generate(map, roomPos);                  
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        int seed = 765;
-        Random.InitState(seed);
-        Generate();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

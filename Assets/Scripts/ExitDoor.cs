@@ -7,8 +7,8 @@ public class Door : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             if (collision.GetComponent<Player>().hasKey) {
-                collision.GetComponent<Player>().hasKey = false;
-                Debug.Log("Go To Next Level");
+                // collision.GetComponent<Player>().hasKey = false;
+                GameManager.instance.GoToNextLevel();
             }
         }
     }
